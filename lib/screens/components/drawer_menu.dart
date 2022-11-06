@@ -1,5 +1,8 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_admin_dashboard/constants/constants.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:responsive_admin_dashboard/screens/addnew.dart';
 import 'package:responsive_admin_dashboard/screens/components/drawer_list_tile.dart';
 
 class DrawerMenu extends StatelessWidget {
@@ -8,26 +11,67 @@ class DrawerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.greenAccent,
       child: ListView(
         children: [
           Container(
+            height: 130,
+            color: Colors.white,
             padding: EdgeInsets.all(appPadding),
-            child: Image.asset("assets/images/logowithtext.png"),
+            child: Column(
+              children: [
+                Expanded(
+                    child: Image.asset("assets/images/looogo.png")),
+                Expanded(
+                  child: Text("Shiftware",
+                    style: TextStyle(
+                        fontFamily: 'Pacifico',
+                        color: Colors.green,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.0),
+                  ),
+                )
+              ],
+            ),
+
           ),
+          Divider(
+              color: grey,
+              thickness: 0.2,
+          ),
+          SizedBox(height: 40,),
           DrawerListTile(
-              title: 'Dash Board',
+
+              title: 'Shift',
               svgSrc: 'assets/icons/Dashboard.svg',
-              tap: () {}),
+              tap: () {
+                showDialog(
+                  context: context,
+                  builder: (ctx) => AlertDialog(
+                    title: const Text("Alert Dialog Box"),
+                    content: const Text("You have raised a Alert Dialog Box"),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(ctx).pop();
+                        },
+                        child: Container(
+                          color: Colors.green,
+                          padding: const EdgeInsets.all(14),
+                          child: const Text("okay"),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }),
           DrawerListTile(
-              title: 'Blog Post',
+              title: 'Staff',
               svgSrc: 'assets/icons/BlogPost.svg',
               tap: () {}),
           DrawerListTile(
-              title: 'Message', svgSrc: 'assets/icons/Message.svg', tap: () {}),
-          DrawerListTile(
-              title: 'Statistics',
-              svgSrc: 'assets/icons/Statistics.svg',
-              tap: () {}),
+              title: 'Clients', svgSrc: 'assets/icons/Message.svg', tap: () {}),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: appPadding * 2),
             child: Divider(
@@ -35,15 +79,28 @@ class DrawerMenu extends StatelessWidget {
               thickness: 0.2,
             ),
           ),
+          DrawerListTile(
+              title: 'invoices',
+              svgSrc: 'assets/icons/Statistics.svg',
+              tap: () {}),
+          DrawerListTile(
 
-          DrawerListTile(
-              title: 'Settings',
-              svgSrc: 'assets/icons/Setting.svg',
-              tap: () {}),
-          DrawerListTile(
-              title: 'Logout',
-              svgSrc: 'assets/icons/Logout.svg',
-              tap: () {}),
+              title: 'AddNew',
+              svgSrc: 'assets/icons/Statistics.svg',
+              tap: () {
+
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AddNew(),fullscreenDialog: true));
+
+              }),
+          // DrawerListTile(
+          //     title: 'Settings',
+          //     svgSrc: 'assets/icons/Setting.svg',
+          //     tap: () {}),
+          // DrawerListTile(
+          //     title: 'Logout',
+          //     svgSrc: 'assets/icons/Logout.svg',
+          //     tap: () {}),
         ],
       ),
     );

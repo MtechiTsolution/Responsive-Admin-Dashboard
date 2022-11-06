@@ -37,13 +37,13 @@ class ProfileInfo extends StatelessWidget {
           margin: EdgeInsets.only(left: appPadding),
           padding: EdgeInsets.symmetric(
             horizontal: appPadding,
-            vertical: appPadding / 2,
+            vertical: appPadding / 1,
           ),
           child: Row(
             children: [
               ClipRRect(
                 child: Image.asset(
-                  'assets/images/photo3.jpg',
+                  'assets/images/photome.jpeg',
                   height: 38,
                   width: 38,
                   fit: BoxFit.cover,
@@ -53,7 +53,7 @@ class ProfileInfo extends StatelessWidget {
               if(!Responsive.isMobile(context))
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: appPadding / 2),
-                child: Text('Hii, Arinalis',style: TextStyle(
+                child: Text('Hii,Muhammad Abbas',style: TextStyle(
                   color: textColor,
                   fontWeight: FontWeight.w800,
                 ),),

@@ -12,20 +12,23 @@ class DashBoardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: bgColor,
-      drawer: DrawerMenu(),
-      key: context.read<Controller>().scaffoldKey,
-      body: SafeArea(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (Responsive.isDesktop(context)) Expanded(child: DrawerMenu(),),
-            Expanded(
-              flex: 5,
-              child: DashboardContent(),
-            )
-          ],
+    return Container(
+
+      child: Scaffold(
+        backgroundColor: bgColor,
+        drawer: DrawerMenu(),
+        key: context.read<Controller>().scaffoldKey,
+        body: SafeArea(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (Responsive.isDesktop(context)) Expanded(child: DrawerMenu(),),
+              Expanded(
+                flex: 5,
+                child: DashboardContent(),
+              )
+            ],
+          ),
         ),
       ),
     );

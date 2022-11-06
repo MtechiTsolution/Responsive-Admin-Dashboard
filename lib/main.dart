@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_admin_dashboard/controllers/controller.dart';
+import 'package:responsive_admin_dashboard/screens/addnew.dart';
 import 'package:responsive_admin_dashboard/screens/dash_board_screen.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Responsive Admin Dashboard',
+      title: 'Shitware',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (context) => Controller(),)
         ],
-        child: DashBoardScreen(),
+         child: DashBoardScreen(),
+       // child:  AddNew(),
       ),
     );
   }

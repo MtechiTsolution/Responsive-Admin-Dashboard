@@ -8,6 +8,7 @@ import 'package:responsive_admin_dashboard/models/referal_info_model.dart';
 List analyticData = [
   AnalyticInfo(
     title: "Subscribers",
+
     count: 720,
     svgSrc: "assets/icons/Subscribers.svg",
     color: primaryColor,

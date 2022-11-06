@@ -31,6 +31,8 @@ dependencies:
   flutter_svg: ^0.22.0
   fl_chart: ^0.36.1
   provider: ^5.0.0
+  dropdown_button2: ^1.8.9
+  animations: ^2.0.7
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +68,13 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: Pacifico
+      fonts:
+      - asset: fonts/Pacifico-Regular.ttf
+    - family: PTSans
+      fonts:
+      - asset: fonts/PTSans-BoldItalic.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
