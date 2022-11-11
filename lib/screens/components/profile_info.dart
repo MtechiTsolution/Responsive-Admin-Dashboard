@@ -54,7 +54,7 @@ class ProfileInfo extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: appPadding / 2),
                 child: Text('Hii,Muhammad Abbas',style: TextStyle(
-                  color: textColor,
+                  color: Colors.blueGrey,
                   fontWeight: FontWeight.w800,
                 ),),
               )

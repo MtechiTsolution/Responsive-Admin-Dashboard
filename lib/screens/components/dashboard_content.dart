@@ -10,6 +10,8 @@ import 'package:responsive_admin_dashboard/screens/components/top_referals.dart'
 import 'package:responsive_admin_dashboard/screens/components/users.dart';
 import 'package:responsive_admin_dashboard/screens/components/users_by_device.dart';
 import 'package:responsive_admin_dashboard/screens/components/viewers.dart';
+import '../../widgets/bottom_model_sheet.dart';
+import '../../widgets/shiftcard.dart';
 import '../../widgets/tablecard.dart';
 import 'customfilter.dart';
 import 'discussions.dart';
@@ -34,12 +36,14 @@ class DashboardContent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                      flex: 5,
+                      flex: 2,
                       child: Column(
                         children: [
                         //  AnalyticCards(),
                           CutomFilter(),
-
+                          Container(
+                              margin: EdgeInsets.only(top: 10),
+                              child: ShiftCard()),
                           SizedBox(
                             height: appPadding,
                           ),

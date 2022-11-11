@@ -33,6 +33,9 @@ dependencies:
   provider: ^5.0.0
   dropdown_button2: ^1.8.9
   animations: ^2.0.7
+  google_fonts: ^1.1.0
+  folding_cell: ^1.0.0
+  fluttericon: ^2.0.0
 
 dev_dependencies:
   flutter_test:

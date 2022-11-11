@@ -12,7 +12,7 @@ class CustomAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.greenAccent,
+      color: Colors.white,
       shape: RoundedRectangleBorder(
         side: BorderSide(color: Colors.white70, width: 1),
         borderRadius: BorderRadius.circular(10),
@@ -28,8 +28,11 @@ class CustomAppbar extends StatelessWidget {
             ),
         //  Expanded(child: SearchField()),
           Expanded(
-              child: Center(child: Text("Shiftware",
-                style: TextStyle(fontWeight: FontWeight.bold),))),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("SHIFTWARE",
+                  style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,),),
+              )),
           ProfileInfo(),
         ],
       ),

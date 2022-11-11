@@ -2,16 +2,19 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_admin_dashboard/constants/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:responsive_admin_dashboard/screens/Client.dart';
+import 'package:responsive_admin_dashboard/screens/Invoices.dart';
+import 'package:responsive_admin_dashboard/screens/Staff.dart';
 import 'package:responsive_admin_dashboard/screens/addnew.dart';
 import 'package:responsive_admin_dashboard/screens/components/drawer_list_tile.dart';
-
+import '../../widgets/bottom_model_sheet.dart';
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.greenAccent,
+      backgroundColor: Colors.blueGrey,
       child: ListView(
         children: [
           Container(
@@ -43,7 +46,7 @@ class DrawerMenu extends StatelessWidget {
           DrawerListTile(
 
               title: 'Shift',
-              svgSrc: 'assets/icons/Dashboard.svg',
+              svgSrc: 'assets/icons/sts.svg',
               tap: () {
                 showDialog(
                   context: context,
@@ -54,6 +57,7 @@ class DrawerMenu extends StatelessWidget {
                       TextButton(
                         onPressed: () {
                           Navigator.of(ctx).pop();
+
                         },
                         child: Container(
                           color: Colors.green,
@@ -68,9 +72,18 @@ class DrawerMenu extends StatelessWidget {
           DrawerListTile(
               title: 'Staff',
               svgSrc: 'assets/icons/BlogPost.svg',
-              tap: () {}),
+              tap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Staff(),fullscreenDialog: true));
+
+              }),
           DrawerListTile(
-              title: 'Clients', svgSrc: 'assets/icons/Message.svg', tap: () {}),
+              title: 'Clients', svgSrc: 'assets/icons/Message.svg',
+              tap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Client(),fullscreenDialog: true));
+
+              }),
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: appPadding * 2),
@@ -81,8 +94,13 @@ class DrawerMenu extends StatelessWidget {
           ),
           DrawerListTile(
               title: 'invoices',
-              svgSrc: 'assets/icons/Statistics.svg',
-              tap: () {}),
+               svgSrc: 'assets/icons/sft.svg',
+
+              tap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Invoices(),fullscreenDialog: true));
+
+              }),
           DrawerListTile(
 
               title: 'AddNew',
